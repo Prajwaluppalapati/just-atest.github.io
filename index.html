@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header class="header" id="header">
+
+        <i class="fa fa-bars" id="hamburger" aria-hidden="true" onclick="navBar()"></i>
+        <a href="#" id="header__logo">Logo</a>
+
+        <nav class="menu" id="menuBtn">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+</body>
+<script>
+    function navBar() {
+        let screenSize = window.innerWidth
+        if (screenSize <= 600) {
+            if (document.getElementById("menuBtn").style.display === "flex") {
+                document.getElementById("menuBtn").style.display = 'none';
+                document.getElementById("header").style.height = 'unset';
+                document.getElementById("hamburger").style.color = "white";
+            } else {
+                document.getElementById("menuBtn").style.display = 'flex';
+                document.getElementById("header").style.height = '150px';
+                document.getElementById("hamburger").style.color = "red";
+            }
+        }
+    }
+    window.addEventListener('resize', function (event) {
+        if (window.innerWidth > 600) {
+            document.getElementById("menuBtn").style.display = 'flex';
+            document.getElementById("header").style.height = 'unset';
+        }else{
+            document.getElementById("menuBtn").style.display = 'none';
+            document.getElementById("hamburger").style.color = "white"; 
+        }
+    });
+</script>
+
+</html>
